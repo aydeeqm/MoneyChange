@@ -5,9 +5,11 @@ export const Button = styled.button`
   border: none;
   border-radius: 3px;
   color: #fff;
-  height: 32px;
+  cursor: pointer;
+  height: 36px;
   display: block;
-  margin-top: 15px;
+  font-size: 16px;
+  margin-top: 25px;
   width: 200px;
   text-align: center;
   &[disabled]{

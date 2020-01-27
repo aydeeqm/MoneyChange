@@ -9,18 +9,11 @@ export const Form = styled.form`
   justify-content: center;
   padding: 70px 0 35px;
 `
-export const Container = styled.div`
+export const ContainerForm = styled.div`
   display: flex;
-`
-
-export const Input = styled.input`
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  margin-bottom: 8px;
-  padding: 8px 4px;
-  display: block;
-  &[disabled] {
-    opacity: .3;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    width: 100%
   }
 `
 export const Error = styled.span`

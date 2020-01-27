@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Wrapped = styled.div`
   padding: 30px;
 `
 
