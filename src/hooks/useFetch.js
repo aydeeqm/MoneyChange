@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
 
-export function useFetcher (action) {
+export function useFetch (action) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
   const [data, setData] = useState(null)
   async function loadData () {
     try {
       setLoading(true)
-      const actionData = await action()
+      const actionData = await action
       setData(actionData)
     } catch (e) {
       setError(e)

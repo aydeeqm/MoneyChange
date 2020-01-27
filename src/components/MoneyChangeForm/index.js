@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Form, Input, Title, Error } from './styles'
 import { useInputValue } from '../../hooks/useInputValue'
 import { SubmitButton } from '../SubmitButton'
 
-export const MoneyChangeForm = ({ onSubmit, title, error, disabled }) => {
-  const usd = useInputValue('')
-  const eur = useInputValue('')
+export const MoneyChangeForm = ({ data, onSubmit, title, error, disabled }) => {
+  const eur = useInputValue(data.rates.EUR)
+  const usd = useInputValue(data.rates.USD)
+
+  const [valueUSD, setValueUSD] = useState(usd)
 
   const hundleSubmit = (event) => {
     event.preventDefault()
-    onSubmit({
-      usd: usd.value,
-      eur: eur.value
+    setValueUSD({
+      ...usd,
+      value: eur.value * usd.value
     })
   }
 
@@ -19,8 +21,8 @@ export const MoneyChangeForm = ({ onSubmit, title, error, disabled }) => {
     <>
       <Form onSubmit={hundleSubmit} disabled={disabled}>
         <Title>{title}</Title>
-        <Input type='text' placeholder='EUR' {...usd} disabled={disabled} />
-        <Input type='text' placeholder='USD' {...eur} disabled />
+        <Input type='text' placeholder='EUR' {...eur} disabled={disabled} />
+        <Input type='text' placeholder='USD' {...valueUSD} disabled />
         <SubmitButton type='submit'>{title}</SubmitButton>
       </Form>
       {error && <Error>{error}</Error>}
