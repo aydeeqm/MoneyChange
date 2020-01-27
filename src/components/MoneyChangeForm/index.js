@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Form, Input, Title, Error } from './styles'
+import { Form, Input, Container, Error } from './styles'
 import { useInputValue } from '../../hooks/useInputValue'
 import { SubmitButton } from '../SubmitButton'
 
@@ -20,9 +20,10 @@ export const MoneyChangeForm = ({ data, onSubmit, title, error, disabled }) => {
   return (
     <>
       <Form onSubmit={hundleSubmit} disabled={disabled}>
-        <Title>{title}</Title>
-        <Input type='text' placeholder='EUR' {...eur} disabled={disabled} />
-        <Input type='text' placeholder='USD' {...valueUSD} disabled />
+        <Container>
+          <Input type='number' placeholder='EUR' {...eur} disabled={disabled} />
+          <Input type='number' placeholder='USD' {...valueUSD} readOnly />
+        </Container>
         <SubmitButton type='submit'>{title}</SubmitButton>
       </Form>
       {error && <Error>{error}</Error>}

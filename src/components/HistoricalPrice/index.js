@@ -1,21 +1,25 @@
 import React from 'react'
+import { Container, Title, Date, Item, Span, Rate, Flex } from './styles'
 
 const renderItem = (item) => {
   const { key, date, rates } = item
   return (
-    <div key={key}>
-      <p>{date}</p>
-      <div>
-        {Object.keys(rates).map(item => <p key={item}><span>{item}</span>{rates[item]}</p>)}
-      </div>
-    </div>
+    <Item key={key}>
+      <Date>{date}</Date>
+      <Flex>
+        {Object.keys(rates).map(
+          item => <Rate key={Rate}><Span>{item} </Span>{rates[item]}</Rate>
+        )}
+      </Flex>
+    </Item>
   )
 }
 
 export const HistoricalPrice = ({ data }) => {
   return (
-    <div>
+    <Container>
+      <Title>HISTORIC PRICE</Title>
       {data.map(renderItem)}
-    </div>
+    </Container>
   )
 }

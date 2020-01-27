@@ -7,7 +7,8 @@ export const Button = styled.button`
   color: #fff;
   height: 32px;
   display: block;
-  width: 100%;
+  margin-top: 15px;
+  width: 200px;
   text-align: center;
   &[disabled]{
     opacity: .3;

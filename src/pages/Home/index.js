@@ -4,6 +4,7 @@ import { getHistorical } from '../../services/getHistorical'
 import { MoneyChangeForm } from '../../components/MoneyChangeForm'
 import { HistoricalPrice } from '../../components/HistoricalPrice'
 import { Fetcher } from '../../components/Fetcher'
+import { Layout } from '../../components/Layout'
 import { dateFormat } from '../../utils/dateFormat'
 
 function Home () {
@@ -13,14 +14,14 @@ function Home () {
     beforeYesterday: dateFormat(2)
   }
   return (
-    <div>
+    <Layout>
       <Fetcher action={getLatest()}>
         {data => <MoneyChangeForm title='CALCULATE' data={data} />}
       </Fetcher>
       <Fetcher action={getHistorical(dates)}>
         {data => <HistoricalPrice data={data} />}
       </Fetcher>
-    </div>
+    </Layout>
   )
 }
 
