@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { getLatest } from '../../services/getLatest'
 import { getHistorical } from '../../services/getHistorical'
 import { MoneyChangeForm } from '../../components/MoneyChangeForm'
@@ -13,12 +13,19 @@ function Home () {
     yesterday: dateFormat(1),
     beforeYesterday: dateFormat(2)
   }
+  useEffect(() => {
+    const interval = setInterval(() => {
+      getHistorical(dates)
+    }, 600000)
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <Layout>
-      <Fetcher action={getLatest()}>
+      <Fetcher action={getLatest()} timer={0}>
         {data => <MoneyChangeForm title='CALCULATE' data={data} />}
       </Fetcher>
-      <Fetcher action={getHistorical(dates)}>
+      <Fetcher action={getHistorical(dates)} timer={500}>
         {data => <HistoricalPrice data={data} />}
       </Fetcher>
     </Layout>

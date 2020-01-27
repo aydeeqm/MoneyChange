@@ -18,5 +18,6 @@ export function useFetch (action) {
   useEffect(() => {
     loadData()
   }, [action])
+
   return [data, loading, error]
 }
