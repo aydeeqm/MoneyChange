@@ -11,10 +11,10 @@ export function Layout ({ cover = DEFAULT_IMAGE, children }) {
           <Image src={cover} />
         </div>
         <FlexItem>
-          <Link href='!#'>Item 1</Link>
-          <Link href='!#'>Item 2</Link>
-          <Link href='!#'>Item 3</Link>
-          <Link href='!#'>Item 4</Link>
+          <Link to='/'>Item 1</Link>
+          <Link to='/'>Item 2</Link>
+          <Link to='/'>Item 3</Link>
+          <Link to='/'>Item 4</Link>
         </FlexItem>
       </Header>
       <div>{children}</div>

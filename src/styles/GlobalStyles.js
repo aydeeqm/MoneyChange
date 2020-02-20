@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
     background: #fefefe;
     height: 100vh;
     margin: 0 auto;
-    max-width: 1440px;
+    max-width: 1280px;
     overscroll-behavior: none;
     width: 100%;
   }

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link as LinkRouter } from '@reach/router'
 
 export const Container = styled.div`
 padding: 30px 0;
@@ -27,7 +28,7 @@ export const FlexItem = styled.div`
   justify-content: center;
   padding: 30px 15px;
 `
-export const Link = styled.a`
+export const Link = styled(LinkRouter)`
   background-color: #dbdbdb;
   border-radius: 5px;
   color: transparent;

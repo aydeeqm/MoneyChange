@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
-import { getLatest } from '../../services/getLatest'
-import { getHistorical } from '../../services/getHistorical'
-import { MoneyChangeForm } from '../../components/MoneyChangeForm'
-import { HistoricalPrice } from '../../components/HistoricalPrice'
-import { Fetcher } from '../../components/Fetcher'
-import { Layout } from '../../components/Layout'
+import { getLatest } from 'services/getLatest'
+import { getHistorical } from 'services/getHistorical'
+import { MoneyChangeForm } from 'components/MoneyChangeForm'
+import { HistoricalPrice } from 'components/HistoricalPrice'
+import { Fetcher } from 'components/Fetcher'
+import { Layout } from 'components/Layout'
 import { dateFormat } from '../../utils/dateFormat'
 
 function Home () {

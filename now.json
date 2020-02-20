@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "blue-bird",
+  "name": "MoneyChange",
   "builds": [
     {
       "use": "@now/static-build",
